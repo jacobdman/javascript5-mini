@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Movie from 'Movie';
 
@@ -14,14 +13,14 @@ class App extends Component {
 
   render() {
 
-    const badMovies = this.state.badMovies.map( movie => {
-      <Movie movie={movie} />
+    const badMovies = this.state.badMovies.map( ( movie, i ) => {
+      <Movie key={i} movie={movie} />
     })
 
     return (
       <div className="App">
         <h1>Terrible Movies List:</h1>
-        [badMovies]
+        {badMovies}
       </div>
     );
   }
